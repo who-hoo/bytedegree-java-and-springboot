@@ -6,12 +6,13 @@
 
 ## week01 Java 기초 문법
 
-|       일차        |                                                                      내용                                                                       |
-| :---------------: | :---------------------------------------------------------------------------------------------------------------------------------------------: |
-| Day01(2021/09/27) | [Chapter 01. 자바 프로그래밍 시작하기](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week01/Day01(20210927).md>) |
-| Day02(2021/09/28) |      [Chapter 02. 변수와 자료형](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week01/Day02(20210928).md>)       |
-| Day03(2021/09/29) |          [Chapter 03. 연산자](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week01/Day03(20210929).md>)          |
-| Day04(2021/09/30) |                                                           Chapter 04. 제어문 - 조건문                                                           |
+|       일차        |                                                                          내용                                                                          |
+| :---------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Day01(2021/09/27) |    [Chapter 01. 자바 프로그래밍 시작하기](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week01/Day01(20210927).md>)     |
+| Day02(2021/09/28) |          [Chapter 02. 변수와 자료형](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week01/Day02(20210928).md>)          |
+| Day03(2021/09/29) |             [Chapter 03. 연산자](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week01/Day03(20210929).md>)              |
+| Day04(2021/09/30) | [Chapter 04. 제어문 - 조건문](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week01/Day04(20210929)-Day05(20211001).md>) |
+| Day05(2021/10/01) | [Chapter 04. 제어문 - 반복문](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week01/Day04(20210929)-Day05(20211001).md>) |
 
 ## week02 객체 지향 프로그래밍
 
