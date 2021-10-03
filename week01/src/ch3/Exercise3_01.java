@@ -8,7 +8,7 @@ class Exercise3_01 {
 		char c = 'A'; // 'A'의 문자코드는 65
 		
 		System.out.println(1 + x << 33); // 6
-		System.out.println(y >= 5 || x < 0 && x > 2); // false
+		System.out.println(y >= 5 || x < 0 && x > 2); // true
 		System.out.println(y += 10 - x++); // 13
 		// x = 3, y = 13
 		System.out.println(x+=2); // 5
