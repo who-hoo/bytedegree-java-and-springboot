@@ -4,15 +4,15 @@ class Exercise4_04 {
 
 	public static void main(String[] args) {
 		int total = 0;
-		int i = 1;
+		int s = 1;
+		int num = 0;
 		
-		while(true) {
-			total = total + i;
-			if (total >= 100) break;
-			i = (i+1)*(-1);
+		for(int i=1; total<100; i++, s=-s) {
+			num = i*s;
+			total += num;
 		}
 		
-		System.out.println(i);
+		System.out.println(num);
 	}
 
 }
