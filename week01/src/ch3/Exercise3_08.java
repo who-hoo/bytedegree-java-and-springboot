@@ -14,7 +14,7 @@ class Exercise3_08 {
 		
 		float f = 3 / 2f;
 		// long l = 3000 * 3000 * 3000;
-		float l = (3000 * 3000 * 3000);
+		long l = (3000 * 3000 * 3000L);
 	
 		
 		float f2 = 0.1f;
