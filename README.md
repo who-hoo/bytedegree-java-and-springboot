@@ -21,6 +21,7 @@
 | Day06(2021/10/04) | [Chapter 05. 클래스와 객체](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week02/Day06(20211004)-Day08(20211006).md>) |
 | Day07(2021/10/05) | [Chapter 05. 클래스와 객체](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week02/Day06(20211004)-Day08(20211006).md>) |
 | Day08(2021/10/06) | [Chapter 05. 클래스와 객체](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week02/Day06(20211004)-Day08(20211006).md>) |
+| Day09(2021/10/07) |                                                         Chapter 06. 배열과 ArrayList - 배열                                                          |
 
 ## week03 객체 지향 프로그래밍
 
