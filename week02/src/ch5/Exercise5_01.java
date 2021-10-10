@@ -12,7 +12,7 @@ class Exercise5_01 {
 		 * e. int arr[5];
 		 * f. int[] arr[] = new int[3][];
 		 * 
-		 * => d
+		 * => d, e
 		 */      
 	}
 
