@@ -20,7 +20,7 @@ class Exercise6_08 {
 		
 		System.out.println("클래스변수 : width, height");
 		System.out.println("인스턴스변수 : kind, num");
-		System.out.println("지역변수 : k, n, args[], card");
+		System.out.println("지역변수 : k, n, args, card");
 	}
 
 }
