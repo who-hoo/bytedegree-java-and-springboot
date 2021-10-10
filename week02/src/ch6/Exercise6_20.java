@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 class Exercise6_20 {
 	public static int[] shuffle(int[] arr) {
+		if(arr == null || arr.length == 0) return arr;
 		for (int i=0; i<arr.length; i++) {
 			int randInt = (int)Math.random()*arr.length;
 			int tmp = arr[i];
