@@ -12,7 +12,7 @@ class Exercise6_13 {
 		 * c. int add(byte a, byte b) { return a+b; }
 		 * d. int add(long a, int b) { return (int)(a+b); }
 		 * 
-		 * => b
+		 * => b, c, d
 		 */
 	}
 
