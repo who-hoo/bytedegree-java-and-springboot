@@ -7,7 +7,7 @@ class Marine {
 	static int weapon = 6; // 공격력
 	static int armor = 0;  // 방어력
 	
-	void weaponUp() {
+	static void weaponUp() {
 		weapon++;
 	}
 	
