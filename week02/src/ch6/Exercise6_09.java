@@ -11,7 +11,7 @@ class Marine {
 		weapon++;
 	}
 	
-	void armorUp() {
+	static void armorUp() {
 		armor++;
 	}
 	
