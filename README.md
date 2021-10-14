@@ -30,7 +30,8 @@
 | :---------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------: |
 | Day11(2021/10/11) | [Chapter 06. 배열과 ArrayList - ArrayList](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week03/Day11(20211011).md>) |
 | Day12(2021/10/12) |     [Chapter 07. 상속과 다형성 - 상속](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week03/Day12(20211012).md>)     |
-| Day13(2021/10/13) |                                                         Chapter 07. 상속과 다형성 - 다형성                                                          |
+| Day13(2021/10/13) |    [Chapter 07. 상속과 다형성 - 다형성](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week03/Day13(20211013).md>)    |
+| Day14(2021/10/14) |                                                               Chapter 08. 추상 클래스                                                               |
 
 ## week04 객체 지향 프로그래밍 중급
 
