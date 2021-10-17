@@ -31,9 +31,7 @@ class MyTv2 {
 		this.volume = volume;
 	}
 	public void gotoPrevChannel() {
-		int tempChannel = channel;
-		channel = prevChannel;
-		prevChannel = tempChannel;
+		setChannel(prevChannel);
 	}
 }
 
