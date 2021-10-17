@@ -36,8 +36,7 @@ class Circle extends Shape {
 	}
 	
 	Circle(double r) {
-		super();
-		this.r = r;
+		this(new Point(0, 0), r);
 	}
 	
 	double calcArea() {
@@ -60,9 +59,7 @@ class Rectangle extends Shape {
 	}
 	
 	Rectangle(double width, double height) {
-		super();
-		this.width = width;
-		this.height = height;
+		this(new Point(0, 0), width, height);
 	}
 	
 	double calcArea() {
