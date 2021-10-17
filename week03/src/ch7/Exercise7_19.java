@@ -30,6 +30,7 @@ class Buyer {
 		int total = 0;
 		
 		for (Product2 product: cart) {
+			if (product == null) break;
 			list += (product + ", ");
 			total += product.price;
 		}
