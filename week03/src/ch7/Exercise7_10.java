@@ -20,6 +20,7 @@ class MyTv {
 		return channel;
 	}
 	public void setChannel(int channel) {
+		if ( channel < MIN_CHANNEL || channel > MAX_CHANNEL ) return;
 		this.channel = channel;
 	}
 	public int getVolume() {
