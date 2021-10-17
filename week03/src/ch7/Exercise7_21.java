@@ -9,7 +9,7 @@ class Exercise7_21 {
 		 * 
 		 * void attack(Movable f) { }
 		 * 
-		 * => Movable을 구현한 클래스를 참조하는 참조변수, Movable을 구현한 클래스를 생성하는 생성자
+		 * => null, Movable인터페이스를 구현한 클래스 또는 그 자손의 인스턴스
 		 */ 
 	}
 
