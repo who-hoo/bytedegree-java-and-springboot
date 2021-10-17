@@ -31,7 +31,7 @@ class Child extends Parent {
 class Exercise7_07 {
 
 	public static void main(String[] args) {
-		Child c = new Child(); // Parent() -> Parent(int x) -> Child() -> Child(int x)
+		Child c = new Child(); // Child() -> Child(int x) -> Parent() -> Parent(int x) -> Object()
 		
 		System.out.println("x = " + c.getX()); // 200
 	}
