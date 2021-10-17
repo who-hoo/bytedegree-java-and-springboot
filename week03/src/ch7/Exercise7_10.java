@@ -26,6 +26,7 @@ class MyTv {
 		return volume;
 	}
 	public void setVolume(int volume) {
+		if ( volume < MIN_VOLUME || volume > MAX_VOLUME ) return;
 		this.volume = volume;
 	}
 }
