@@ -70,7 +70,7 @@ class Rectangle extends Shape {
 	}
 	
 	boolean isSqare() {
-		return width == height;
+		return width == height && width * height != 0;
 	}
 }
 
