@@ -28,6 +28,7 @@ class SutdaDeck2 {
 	
 	// 배열 cards에서 지정된 위치의 SutdaCard를 반환한다.
 	SutdaCard pick(int index) {
+		if (index < 0 || index >= CARD_NUM) return null; // index validation check
 		return cards[index];
 	}
 	
