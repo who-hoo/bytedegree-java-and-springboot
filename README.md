@@ -41,7 +41,8 @@
 | Day16(2021/10/18) |              [Chapter 10. 기본 클래스](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week04/Day16(20211018).md>)               |
 | Day17(2021/10/19) | [Chapter 11. 컬렉션 프레임워크 - 제네릭 프로그래밍](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week04/Day17(20211019).md>)  |
 | Day18(2021/10/20) | [Chapter 11. 컬렉션 프레임워크 - List, Stack, Queue](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week04/Day18(20211020).md>) |
-| Day19(2021/10/21) |                                                           Chapter 11. 컬렉션 프레임워크 - Set, Map                                                            |
+| Day19(2021/10/21) |      [Chapter 11. 컬렉션 프레임워크 - Set, Map](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week04/Day19(20211021).md>)      |
+| Day20(2021/10/22) |                                                     Chapter 12. 내부 클래스, 람다식, 스트림 - 내부 클래스                                                     |
 
 ## week05 객체 지향 프로그래밍 중급
 
