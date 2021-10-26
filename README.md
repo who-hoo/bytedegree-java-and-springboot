@@ -44,9 +44,13 @@
 | Day19(2021/10/21) |       [Chapter 11. 컬렉션 프레임워크 - Set, Map](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week04/Day19(20211021).md>)        |
 | Day20(2021/10/22) | [Chapter 12. 내부 클래스, 람다식, 스트림 - 내부 클래스](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week04/Day20(20211022).md>) |
 | Day21(2021/10/23) |   [Chapter 12. 내부 클래스, 람다식, 스트림 - 람다식](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week04/Day21(20211023).md>)    |
-| Day22(2021/10/24) |                                                         Chapter 12. 내부 클래스, 람다식, 스트림 - 스트림                                                         |
+| Day22(2021/10/24) |   [Chapter 12. 내부 클래스, 람다식, 스트림 - 스트림](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week04/Day22(20211024).md>)    |
 
 ## week05 객체 지향 프로그래밍 중급
+
+|       일차        |         내용          |
+| :---------------: | :-------------------: |
+| Day23(2021/10/25) | Chapter 13. 예외 처리 |
 
 ## week06 SpringBoot CRUD
 
