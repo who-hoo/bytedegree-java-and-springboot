@@ -48,10 +48,11 @@
 
 ## week05 객체 지향 프로그래밍 중급
 
-|       일차        |                                                               내용                                                               |
-| :---------------: | :------------------------------------------------------------------------------------------------------------------------------: |
-| Day23(2021/10/25) | [Chapter 13. 예외 처리](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week05/Day23(20211025).md>) |
-| Day24(2021/10/26) |                                    Chapter 14. 자바 입출력 - 자바 입출력 스트림, 표준 입출력                                     |
+|       일차        |                                                                        내용                                                                        |
+| :---------------: | :------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Day23(2021/10/25) |          [Chapter 13. 예외 처리](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week05/Day23(20211025).md>)          |
+| Day24(2021/10/26) | [Chapter 14. 자바 입출력](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week05/Day24(20211026)-Day25(20211027).md>) |
+| Day25(2021/10/27) | [Chapter 14. 자바 입출력](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week05/Day24(20211026)-Day25(20211027).md>) |
 
 ## week06 SpringBoot CRUD
 
