@@ -48,12 +48,13 @@
 
 ## week05 객체 지향 프로그래밍 중급
 
-|       일차        |                                                                        내용                                                                        |
-| :---------------: | :------------------------------------------------------------------------------------------------------------------------------------------------: |
-| Day23(2021/10/25) |          [Chapter 13. 예외 처리](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week05/Day23(20211025).md>)          |
-| Day24(2021/10/26) | [Chapter 14. 자바 입출력](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week05/Day24(20211026)-Day25(20211027).md>) |
-| Day25(2021/10/27) | [Chapter 14. 자바 입출력](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week05/Day24(20211026)-Day25(20211027).md>) |
-| Day26(2021/10/28) |                                                         Chapter 15. 자바 Thread 프로그래밍                                                         |
+|       일차        |                                                                             내용                                                                              |
+| :---------------: | :-----------------------------------------------------------------------------------------------------------------------------------------------------------: |
+| Day23(2021/10/25) |               [Chapter 13. 예외 처리](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week05/Day23(20211025).md>)                |
+| Day24(2021/10/26) |      [Chapter 14. 자바 입출력](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week05/Day24(20211026)-Day25(20211027).md>)       |
+| Day25(2021/10/27) |      [Chapter 14. 자바 입출력](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week05/Day24(20211026)-Day25(20211027).md>)       |
+| Day26(2021/10/28) | [Chapter 15. 자바 Thread 프로그래밍](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week05/Day26(20211028)-Day27(20211029).md>) |
+| Day27(2021/10/29) | [Chapter 15. 자바 Thread 프로그래밍](<https://github.com/who-hoo/bytedegree-java-and-springboot/blob/main/summary/week05/Day26(20211028)-Day27(20211029).md>) |
 
 ## week06 SpringBoot CRUD
 
