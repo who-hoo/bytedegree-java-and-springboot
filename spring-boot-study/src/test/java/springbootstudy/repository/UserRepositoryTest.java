@@ -2,6 +2,7 @@ package springbootstudy.repository;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
+import javax.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import springbootstudy.SpringBootStudyApplicationTests;
@@ -13,6 +14,7 @@ public class UserRepositoryTest extends SpringBootStudyApplicationTests {
     private UserRepository userRepository;
 
     @Test
+    @Transactional
     public void create() {
         User user = new User();
         user.setAccount("TestUser02");
@@ -32,6 +34,7 @@ public class UserRepositoryTest extends SpringBootStudyApplicationTests {
     }
 
     @Test
+    @Transactional
     public void update() {
         Optional<User> user = userRepository.findById(2L);
         user.ifPresent(selectedUser -> {
@@ -44,6 +47,7 @@ public class UserRepositoryTest extends SpringBootStudyApplicationTests {
     }
 
     @Test
+    @Transactional
     public void delete() {
         Optional<User> user = userRepository.findById(1L);
         user.ifPresent(selectedUser -> userRepository.delete(selectedUser));
