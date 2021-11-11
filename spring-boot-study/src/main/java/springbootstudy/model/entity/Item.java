@@ -1,5 +1,6 @@
 package springbootstudy.model.entity;
 
+import java.util.List;
 import javax.persistence.*;
 import lombok.*;
 
@@ -18,4 +19,7 @@ public class Item {
     private Integer price;
 
     private String content;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "item")
+    private List<OrderDetail> orderDetailList;
 }

@@ -7,6 +7,7 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString(exclude = {"user", "item"})
 @Entity
 public class OrderDetail {
 
@@ -16,7 +17,9 @@ public class OrderDetail {
 
     private LocalDateTime orderAt;
 
-    private Long userId;
+    @ManyToOne
+    private User user;
 
-    private Long itemId;
+    @ManyToOne
+    private Item item;
 }
