@@ -25,6 +25,7 @@ public class ItemRepositoryTest extends SpringBootStudyApplicationTests {
     }
 
     @Test
+    @Transactional
     public void read() {
         Optional<Item> item = itemRepository.findById(1L);
         item.ifPresent(selectedItem -> System.out.println("Item : " + selectedItem));

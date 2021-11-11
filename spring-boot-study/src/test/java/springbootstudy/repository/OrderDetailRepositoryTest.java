@@ -18,14 +18,15 @@ public class OrderDetailRepositoryTest extends SpringBootStudyApplicationTests {
     public void create() {
         OrderDetail orderDetail = new OrderDetail();
         orderDetail.setOrderAt(LocalDateTime.now());
-        orderDetail.setUserId(7L);
-        orderDetail.setItemId(1L);
+//        orderDetail.(7L);
+//        orderDetail.setItemId(1L);
 
         OrderDetail newOrderDetail = orderDetailRepository.save(orderDetail);
         System.out.println("newOrderDetail : " + newOrderDetail);
     }
 
     @Test
+    @Transactional
     public void read() {
         Optional<OrderDetail> orderDetail = orderDetailRepository.findById(1L);
         orderDetail.ifPresent(selectedOrderDetail -> {
