@@ -43,7 +43,15 @@ public class UserRepositoryTest extends SpringBootStudyApplicationTests {
         });
     }
 
+    @Test
     public void delete() {
-        // TODO: 삭제 코드 작성
+        Optional<User> user = userRepository.findById(1L);
+        user.ifPresent(selectedUser -> userRepository.delete(selectedUser));
+        Optional<User> deletedUser = userRepository.findById(1L);
+        if (deletedUser.isPresent()) {
+            System.out.println("데이터 삭제 실패 : " + deletedUser.get());
+        } else {
+            System.out.println("데이터 삭제 성공");
+        }
     }
 }
