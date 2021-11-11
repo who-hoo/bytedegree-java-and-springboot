@@ -30,11 +30,13 @@ public class UserRepositoryTest extends SpringBootStudyApplicationTests {
     @Test
     @Transactional
     public void read() {
-        Optional<User> user = userRepository.findById(7L);
+//        Optional<User> user = userRepository.findById(7L);
+        Optional<User> user = userRepository.findByAccount("TestUser02");
         user.ifPresent(selectedUser -> {
             selectedUser.getOrderDetailList()
                 .forEach(detail -> System.out.println(detail.getItem()));
         });
+
     }
 
     @Test
