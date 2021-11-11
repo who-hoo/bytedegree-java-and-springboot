@@ -31,8 +31,16 @@ public class UserRepositoryTest extends SpringBootStudyApplicationTests {
         user.ifPresent(selectedUser -> System.out.println("User : " + selectedUser));
     }
 
+    @Test
     public void update() {
-        // TODO: 수정 코드 작성
+        Optional<User> user = userRepository.findById(2L);
+        user.ifPresent(selectedUser -> {
+            selectedUser.setAccount("UpdatedUser");
+            selectedUser.setUpdatedAt(LocalDateTime.now());
+            selectedUser.setUpdatedBy("update method test");
+
+            userRepository.save(selectedUser);
+        });
     }
 
     public void delete() {
