@@ -36,6 +36,8 @@ public class UserRepositoryTest extends SpringBootStudyApplicationTests {
             .email("Test02@gmail.com")
             .build();
 
+        buildUser.setAccount("Test03").setPassword("Test03");
+
         User newUser = userRepository.save(buildUser);
 
         assertNotNull(newUser);
