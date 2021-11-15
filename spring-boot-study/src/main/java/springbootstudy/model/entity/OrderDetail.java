@@ -1,5 +1,6 @@
 package springbootstudy.model.entity;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import javax.persistence.*;
 import lombok.*;
@@ -7,7 +8,6 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString(exclude = {"user", "item"})
 @Entity
 public class OrderDetail {
 
@@ -15,11 +15,19 @@ public class OrderDetail {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private LocalDateTime orderAt;
+    private String status;
 
-    @ManyToOne
-    private User user;
+    private LocalDateTime arrivalDate;
 
-    @ManyToOne
-    private Item item;
+    private Integer quantity;
+
+    private BigDecimal totalPrice;
+
+    private LocalDateTime createdAt;
+
+    private String createdBy;
+
+    private LocalDateTime updatedAt;
+
+    private String updatedBy;
 }
