@@ -1,5 +1,7 @@
 package springbootstudy.repository;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import java.time.LocalDateTime;
 import java.util.Optional;
 import javax.transaction.Transactional;
@@ -14,54 +16,24 @@ public class UserRepositoryTest extends SpringBootStudyApplicationTests {
     private UserRepository userRepository;
 
     @Test
-    @Transactional
     public void create() {
         User user = new User();
-        user.setAccount("TestUser02");
-        user.setEmail("TestUser02@gmail.com");
+        user.setAccount("Test01");
+        user.setPassword("Test01");
+        user.setStatus("REGISTERED");
+        user.setEmail("Test01@gmail.com");
         user.setPhoneNumber("010-1234-5678");
+        user.setRegisteredAt(LocalDateTime.now());
         user.setCreatedAt(LocalDateTime.now());
         user.setCreatedBy("admin");
 
         User newUser = userRepository.save(user);
-        System.out.println("newUser : " + newUser);
+        assertNotNull(newUser);
     }
 
     @Test
-    @Transactional
     public void read() {
-//        Optional<User> user = userRepository.findById(7L);
-        Optional<User> user = userRepository.findByAccount("TestUser02");
-        user.ifPresent(selectedUser -> {
-            selectedUser.getOrderDetailList()
-                .forEach(detail -> System.out.println(detail.getItem()));
-        });
-
-    }
-
-    @Test
-    @Transactional
-    public void update() {
-        Optional<User> user = userRepository.findById(2L);
-        user.ifPresent(selectedUser -> {
-            selectedUser.setAccount("UpdatedUser");
-            selectedUser.setUpdatedAt(LocalDateTime.now());
-            selectedUser.setUpdatedBy("update method test");
-
-            userRepository.save(selectedUser);
-        });
-    }
-
-    @Test
-    @Transactional
-    public void delete() {
-        Optional<User> user = userRepository.findById(1L);
-        user.ifPresent(selectedUser -> userRepository.delete(selectedUser));
-        Optional<User> deletedUser = userRepository.findById(1L);
-        if (deletedUser.isPresent()) {
-            System.out.println("데이터 삭제 실패 : " + deletedUser.get());
-        } else {
-            System.out.println("데이터 삭제 성공");
-        }
+        User user = userRepository.findFirstByPhoneNumberOrderByIdDesc("010-1234-5678");
+        assertNotNull(user);
     }
 }
