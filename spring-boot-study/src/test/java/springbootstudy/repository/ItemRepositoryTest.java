@@ -1,5 +1,8 @@
 package springbootstudy.repository;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+import java.time.LocalDateTime;
 import java.util.Optional;
 import javax.transaction.Transactional;
 import org.junit.jupiter.api.Test;
@@ -13,46 +16,20 @@ public class ItemRepositoryTest extends SpringBootStudyApplicationTests {
     private ItemRepository itemRepository;
 
     @Test
-    @Transactional
     public void create() {
         Item item = new Item();
-        item.setName("노트북");
-        item.setPrice(1000000);
-        item.setContent("삼성 노트북");
+        item.setStatus("REGISTERED");
+        item.setName("삼성 노트북");
+        item.setTitle("삼성 노트북 A100");
+        item.setContent("최신형 노트북");
+        item.setPrice(900000);
+        item.setBrandName("삼성");
+        item.setRegisteredAt(LocalDateTime.now());
+        item.setCreatedAt(LocalDateTime.now());
+        item.setCreatedBy("Partner01");
+        item.setPartnerId(1L);
 
         Item newItem = itemRepository.save(item);
-        System.out.println("newItem : " + newItem);
-    }
-
-    @Test
-    @Transactional
-    public void read() {
-        Optional<Item> item = itemRepository.findById(1L);
-        item.ifPresent(selectedItem -> System.out.println("Item : " + selectedItem));
-    }
-
-    @Test
-    @Transactional
-    public void update() {
-        Optional<Item> item = itemRepository.findById(1L);
-        item.ifPresent(selectedItem -> {
-            selectedItem.setPrice(2000000);
-            selectedItem.setContent("업그레이드 삼성 노트북");
-
-            itemRepository.save(selectedItem);
-        });
-    }
-
-    @Test
-    @Transactional
-    public void delete() {
-        Optional<Item> item = itemRepository.findById(1L);
-        item.ifPresent(selectedItem -> itemRepository.delete(selectedItem));
-        Optional<Item> deletedItem = itemRepository.findById(1L);
-        if (deletedItem.isPresent()) {
-            System.out.println("데이터 삭제 실패 : " + deletedItem.get());
-        } else {
-            System.out.println("데이터 삭제 성공");
-        }
+        assertNotNull(newItem);
     }
 }
