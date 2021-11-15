@@ -28,7 +28,7 @@ public class OrderGroupRepositoryTest extends SpringBootStudyApplicationTests {
         orderGroup.setArrivalDate(LocalDateTime.now());
         orderGroup.setCreatedAt(LocalDateTime.now());
         orderGroup.setCreatedBy("admin");
-        orderGroup.setUserId(1L);
+//        orderGroup.setUserId(1L);
 
         OrderGroup newOrderGroup = orderGroupRepository.save(orderGroup);
         assertNotNull(newOrderGroup);

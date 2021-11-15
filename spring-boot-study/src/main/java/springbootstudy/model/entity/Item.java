@@ -1,6 +1,7 @@
 package springbootstudy.model.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import javax.persistence.*;
 import lombok.*;
 
@@ -8,6 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@ToString(exclude = {"partner", "orderDetailList"})
 public class Item {
 
     @Id
@@ -38,5 +40,9 @@ public class Item {
 
     private String updatedBy;
 
-    private Long partnerId;
+    @ManyToOne
+    private Partner partner;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "item")
+    private List<OrderDetail> orderDetailList;
 }

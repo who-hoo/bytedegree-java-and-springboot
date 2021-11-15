@@ -1,6 +1,7 @@
 package springbootstudy.model.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import javax.persistence.*;
 import lombok.*;
 
@@ -8,6 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@ToString(exclude = {"orderGroupList"})
 public class User {
 
     @Id
@@ -35,4 +37,7 @@ public class User {
     private LocalDateTime updatedAt;
 
     private String updatedBy;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+    private List<OrderGroup> orderGroupList;
 }
