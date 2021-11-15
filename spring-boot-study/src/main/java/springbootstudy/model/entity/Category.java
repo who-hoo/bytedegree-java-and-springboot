@@ -1,13 +1,15 @@
 package springbootstudy.model.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import javax.persistence.*;
 import lombok.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity()
+@Entity
+@ToString(exclude = {"partnerList"})
 public class Category {
 
     @Id
@@ -25,4 +27,7 @@ public class Category {
     private LocalDateTime updatedAt;
 
     private String updatedBy;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "category")
+    private List<Partner> partnerList;
 }

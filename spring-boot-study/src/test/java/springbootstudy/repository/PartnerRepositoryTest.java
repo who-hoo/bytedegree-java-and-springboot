@@ -25,7 +25,7 @@ public class PartnerRepositoryTest extends SpringBootStudyApplicationTests {
         partner.setRegisteredAt(LocalDateTime.now());
         partner.setCreatedAt(LocalDateTime.now());
         partner.setCreatedBy("admin");
-        partner.setCategoryId(1L);
+//        partner.setCategoryId(1L);
 
         Partner newPartner = partnerRepository.save(partner);
         assertNotNull(partner);
