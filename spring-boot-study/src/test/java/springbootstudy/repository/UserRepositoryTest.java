@@ -17,17 +17,27 @@ public class UserRepositoryTest extends SpringBootStudyApplicationTests {
 
     @Test
     public void create() {
-        User user = new User();
-        user.setAccount("Test01");
-        user.setPassword("Test01");
-        user.setStatus("REGISTERED");
-        user.setEmail("Test01@gmail.com");
-        user.setPhoneNumber("010-1234-5678");
-        user.setRegisteredAt(LocalDateTime.now());
-        user.setCreatedAt(LocalDateTime.now());
-        user.setCreatedBy("admin");
+//        User user = new User();
+//        user.setAccount("Test01");
+//        user.setPassword("Test01");
+//        user.setStatus("REGISTERED");
+//        user.setEmail("Test01@gmail.com");
+//        user.setPhoneNumber("010-1234-5678");
+//        user.setRegisteredAt(LocalDateTime.now());
+//        user.setCreatedAt(LocalDateTime.now());
+//        user.setCreatedBy("admin");
+//
+//        User newUser = userRepository.save(user);
 
-        User newUser = userRepository.save(user);
+        User buildUser = User.builder()
+            .account("Test02")
+            .password("Test02")
+            .status("REGISTERED")
+            .email("Test02@gmail.com")
+            .build();
+
+        User newUser = userRepository.save(buildUser);
+
         assertNotNull(newUser);
     }
 
@@ -50,7 +60,8 @@ public class UserRepositoryTest extends SpringBootStudyApplicationTests {
                             System.out.println(
                                 "파트너사이름 : " + orderDetail.getItem().getPartner().getName());
                             System.out.println(
-                                "파트너사카테고리 : " + orderDetail.getItem().getPartner().getCategory().getTitle());
+                                "파트너사카테고리 : " + orderDetail.getItem().getPartner().getCategory()
+                                    .getTitle());
                             System.out.println("주문상품 : " + orderDetail.getItem().getName());
                             System.out.println(
                                 "고객센터번호 : " + orderDetail.getItem().getPartner().getCallCenter());
