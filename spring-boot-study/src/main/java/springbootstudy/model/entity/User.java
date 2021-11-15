@@ -16,6 +16,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @Entity
 @EntityListeners(AuditingEntityListener.class)
 @ToString(exclude = {"orderGroupList"})
+@Builder
 public class User {
 
     @Id
