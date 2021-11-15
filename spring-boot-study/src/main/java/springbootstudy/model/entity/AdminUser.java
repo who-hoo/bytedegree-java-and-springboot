@@ -8,23 +8,25 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Item {
+public class AdminUser {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String account;
+
+    private String password;
+
     private String status;
 
-    private String name;
+    private String role;
 
-    private String title;
+    private LocalDateTime lastLoginAt;
 
-    private String content;
+    private LocalDateTime passwordUpdatedAt;
 
-    private Integer price;
-
-    private String brandName;
+    private Integer loginFailCount;
 
     private LocalDateTime registeredAt;
 

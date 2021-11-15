@@ -7,28 +7,16 @@ import lombok.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-public class Item {
+@Entity()
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String status;
-
-    private String name;
+    private String type;
 
     private String title;
-
-    private String content;
-
-    private Integer price;
-
-    private String brandName;
-
-    private LocalDateTime registeredAt;
-
-    private LocalDateTime unregisteredAt;
 
     private LocalDateTime createdAt;
 
