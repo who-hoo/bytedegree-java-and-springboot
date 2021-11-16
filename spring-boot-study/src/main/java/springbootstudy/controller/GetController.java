@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import springbootstudy.model.SearchParam;
+import springbootstudy.model.network.Header;
 
 @RestController
 @RequestMapping("/api")
@@ -27,5 +28,10 @@ public class GetController {
     @GetMapping("/getMultiParameter")
     public SearchParam getMultiParameter(SearchParam param) {
         return param;
+    }
+
+    @GetMapping("/header")
+    public Header getHeader() {
+        return Header.builder().resultCode("OK").description("OK").build();
     }
 }
