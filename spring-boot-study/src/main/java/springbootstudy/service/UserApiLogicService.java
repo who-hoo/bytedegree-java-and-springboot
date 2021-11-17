@@ -37,7 +37,7 @@ public class UserApiLogicService implements CrudInterface<UserApiRequest, UserAp
         Optional<User> selectedUser = userRepository.findById(id);
         return selectedUser
             .map(user -> response(user))
-            .orElseGet(()-> Header.ERROR("no data"));
+            .orElseGet(() -> Header.ERROR("no data"));
     }
 
     @Override
