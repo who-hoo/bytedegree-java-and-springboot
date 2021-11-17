@@ -1,6 +1,7 @@
 package springbootstudy.service;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import springbootstudy.interfaces.CrudInterface;
@@ -33,7 +34,10 @@ public class UserApiLogicService implements CrudInterface<UserApiRequest, UserAp
 
     @Override
     public Header<UserApiResponse> read(Long id) {
-        return null;
+        Optional<User> selectedUser = userRepository.findById(id);
+        return selectedUser
+            .map(user -> response(user))
+            .orElseGet(()-> Header.ERROR("no data"));
     }
 
     @Override

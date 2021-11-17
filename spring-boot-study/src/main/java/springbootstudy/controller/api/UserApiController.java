@@ -1,7 +1,6 @@
 package springbootstudy.controller.api;
 
 import lombok.extern.slf4j.Slf4j;
-import org.hibernate.annotations.common.util.impl.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import springbootstudy.interfaces.CrudInterface;
@@ -27,7 +26,7 @@ public class UserApiController implements CrudInterface<UserApiRequest, UserApiR
     @Override
     @GetMapping("{id}")
     public Header<UserApiResponse> read(@PathVariable(name = "id") Long id) {
-        return null;
+        return userApiLogicService.read(id);
     }
 
     @Override
