@@ -42,7 +42,22 @@ public class UserApiLogicService implements CrudInterface<UserApiRequest, UserAp
 
     @Override
     public Header<UserApiResponse> update(Header<UserApiRequest> request) {
-        return null;
+        UserApiRequest userApiRequest = request.getData();
+        Optional<User> selectedUser = userRepository.findById(userApiRequest.getId());
+        return selectedUser
+            .map(user -> {
+                user.setAccount(userApiRequest.getAccount())
+                    .setPassword(userApiRequest.getPassword())
+                    .setStatus(userApiRequest.getStatus())
+                    .setEmail(userApiRequest.getEmail())
+                    .setPhoneNumber(userApiRequest.getPhoneNumber())
+                    .setRegisteredAt(userApiRequest.getRegisteredAt())
+                    .setUnregisteredAt(userApiRequest.getUnregisteredAt());
+                return user;
+            })
+            .map(user -> userRepository.save(user))
+            .map(updatedUser -> response(updatedUser))
+            .orElseGet(() -> Header.ERROR("no data"));
     }
 
     @Override
