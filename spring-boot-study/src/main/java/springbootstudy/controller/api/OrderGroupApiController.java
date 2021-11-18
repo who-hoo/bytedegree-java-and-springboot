@@ -33,7 +33,7 @@ public class OrderGroupApiController implements
     @Override
     @PutMapping("")
     public Header<OrderGroupApiResponse> update(@RequestBody Header<OrderGroupApiRequest> request) {
-        return null;
+        return orderGroupApiLogicService.update(request);
     }
 
     @Override
