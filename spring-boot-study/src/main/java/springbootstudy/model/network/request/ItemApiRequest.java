@@ -3,6 +3,7 @@ package springbootstudy.model.network.request;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import lombok.*;
+import springbootstudy.model.enumClass.ItemStatus;
 
 @Data
 @AllArgsConstructor
@@ -12,7 +13,7 @@ public class ItemApiRequest {
 
     private Long id;
 
-    private String status;
+    private ItemStatus status;
 
     private String name;
 
