@@ -1,6 +1,7 @@
 package springbootstudy.service;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import springbootstudy.interfaces.CrudInterface;
@@ -39,7 +40,10 @@ public class ItemApiLogicService implements CrudInterface<ItemApiRequest, ItemAp
 
     @Override
     public Header<ItemApiResponse> read(Long id) {
-        return null;
+        Optional<Item> selectedItem = itemRepository.findById(id);
+        return selectedItem
+            .map(item -> response(item))
+            .orElseGet(() -> Header.ERROR("no data"));
     }
 
     @Override
