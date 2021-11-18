@@ -2,6 +2,7 @@ package springbootstudy.model.network.request;
 
 import java.time.LocalDateTime;
 import lombok.*;
+import springbootstudy.model.enumClass.UserStatus;
 
 @Data
 @AllArgsConstructor
@@ -15,7 +16,7 @@ public class UserApiRequest {
 
     private String password;
 
-    private String status;
+    private UserStatus status;
 
     private String email;
 
