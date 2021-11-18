@@ -50,7 +50,25 @@ public class OrderGroupApiLogicService implements
 
     @Override
     public Header<OrderGroupApiResponse> update(Header<OrderGroupApiRequest> request) {
-        return null;
+        OrderGroupApiRequest req = request.getData();
+        Optional<OrderGroup> selectedOrderGroup = orderGroupRepository.findById(req.getId());
+        return selectedOrderGroup
+            .map(orderGroup -> {
+                orderGroup.setStatus(req.getStatus())
+                    .setOrderType(req.getOrderType())
+                    .setRevAddress(req.getRevAddress())
+                    .setRevName(req.getRevName())
+                    .setPaymentType(req.getPaymentType())
+                    .setTotalPrice(req.getTotalPrice())
+                    .setTotalQuantity(req.getTotalQuantity())
+                    .setOrderAt(req.getOrderAt())
+                    .setArrivalDate(req.getArrivalDate())
+                    .setUser(userRepository.getById(req.getUserId()));
+                return orderGroup;
+            })
+            .map(orderGroup -> orderGroupRepository.save(orderGroup))
+            .map(updateOrderGroup -> response(updateOrderGroup))
+            .orElseGet(() -> Header.ERROR("no data"));
     }
 
     @Override
