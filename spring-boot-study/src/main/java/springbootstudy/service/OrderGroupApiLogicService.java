@@ -1,6 +1,7 @@
 package springbootstudy.service;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import springbootstudy.interfaces.CrudInterface;
@@ -41,7 +42,10 @@ public class OrderGroupApiLogicService implements
 
     @Override
     public Header<OrderGroupApiResponse> read(Long id) {
-        return null;
+        Optional<OrderGroup> selectedOrderGroup = orderGroupRepository.findById(id);
+        return selectedOrderGroup
+            .map(orderGroup -> response(orderGroup))
+            .orElseGet(() -> Header.ERROR("no data"));
     }
 
     @Override
