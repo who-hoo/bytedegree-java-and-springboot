@@ -10,6 +10,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import springbootstudy.model.enumClass.UserStatus;
 
 @Data
 @AllArgsConstructor
@@ -29,7 +30,8 @@ public class User {
 
     private String password;
 
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private UserStatus status;
 
     private String email;
 
