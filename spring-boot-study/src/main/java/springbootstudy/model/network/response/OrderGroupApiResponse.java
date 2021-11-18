@@ -3,6 +3,7 @@ package springbootstudy.model.network.response;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import lombok.*;
+import springbootstudy.model.enumClass.OrderType;
 
 @Data
 @AllArgsConstructor
@@ -14,7 +15,7 @@ public class OrderGroupApiResponse {
 
     private String status;
 
-    private String orderType;
+    private OrderType orderType;
 
     private String revAddress;
 
