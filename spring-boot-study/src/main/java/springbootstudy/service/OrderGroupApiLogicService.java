@@ -72,8 +72,14 @@ public class OrderGroupApiLogicService implements
     }
 
     @Override
-    public Header<OrderGroupApiResponse> delete(Long id) {
-        return null;
+    public Header delete(Long id) {
+        Optional<OrderGroup> selectedOrderGroup = orderGroupRepository.findById(id);
+        return selectedOrderGroup
+            .map(orderGroup -> {
+                orderGroupRepository.delete(orderGroup);
+                return Header.OK();
+            })
+            .orElseGet(() -> Header.ERROR("no data"));
     }
 
     private Header<OrderGroupApiResponse> response(OrderGroup orderGroup) {

@@ -39,6 +39,6 @@ public class OrderGroupApiController implements
     @Override
     @DeleteMapping("{id}")
     public Header<OrderGroupApiResponse> delete(@PathVariable Long id) {
-        return null;
+        return orderGroupApiLogicService.delete(id);
     }
 }
