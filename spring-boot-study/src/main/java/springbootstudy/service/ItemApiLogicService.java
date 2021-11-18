@@ -48,7 +48,23 @@ public class ItemApiLogicService implements CrudInterface<ItemApiRequest, ItemAp
 
     @Override
     public Header<ItemApiResponse> update(Header<ItemApiRequest> request) {
-        return null;
+        ItemApiRequest req = request.getData();
+        Optional<Item> selectedItem = itemRepository.findById(req.getId());
+        return selectedItem
+            .map(item -> {
+                item.setStatus(req.getStatus())
+                    .setName(req.getName())
+                    .setTitle(req.getTitle())
+                    .setContent(req.getContent())
+                    .setPrice(req.getPrice())
+                    .setBrandName(req.getBrandName())
+                    .setRegisteredAt(req.getRegisteredAt())
+                    .setUnregisteredAt(req.getUnregisteredAt());
+                return item;
+            })
+            .map(item -> itemRepository.save(item))
+            .map(updatedItem -> response(updatedItem))
+            .orElseGet(() -> Header.ERROR("no data"));
     }
 
     @Override
