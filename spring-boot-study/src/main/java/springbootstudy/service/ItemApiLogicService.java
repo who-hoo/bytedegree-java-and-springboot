@@ -68,8 +68,14 @@ public class ItemApiLogicService implements CrudInterface<ItemApiRequest, ItemAp
     }
 
     @Override
-    public Header<ItemApiResponse> delete(Long id) {
-        return null;
+    public Header delete(Long id) {
+        Optional<Item> selectedItem = itemRepository.findById(id);
+        return selectedItem
+            .map(item -> {
+                itemRepository.delete(item);
+                return Header.OK();
+            })
+            .orElseGet(() -> Header.ERROR("no data"));
     }
 
     private Header<ItemApiResponse> response(Item item) {
