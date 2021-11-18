@@ -11,6 +11,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+import springbootstudy.model.enumClass.OrderType;
 
 @Data
 @AllArgsConstructor
@@ -28,7 +29,8 @@ public class OrderGroup {
 
     private String status;
 
-    private String orderType;
+    @Enumerated(EnumType.STRING)
+    private OrderType orderType;
 
     private String revAddress;
 
