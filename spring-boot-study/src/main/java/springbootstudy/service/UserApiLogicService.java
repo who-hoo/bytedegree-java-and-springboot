@@ -13,10 +13,8 @@ import springbootstudy.model.network.response.UserApiResponse;
 import springbootstudy.repository.UserRepository;
 
 @Service
-public class UserApiLogicService implements CrudInterface<UserApiRequest, UserApiResponse> {
-
-    @Autowired
-    private UserRepository userRepository;
+public class UserApiLogicService
+    extends BaseService<UserApiRequest, UserApiResponse, User> {
 
     @Override
     public Header<UserApiResponse> create(Header<UserApiRequest> request) {
@@ -29,13 +27,13 @@ public class UserApiLogicService implements CrudInterface<UserApiRequest, UserAp
             .email(userApiRequest.getEmail())
             .registeredAt(LocalDateTime.now())
             .build();
-        User newUser = userRepository.save(user);
+        User newUser = baseRepository.save(user);
         return response(newUser);
     }
 
     @Override
     public Header<UserApiResponse> read(Long id) {
-        Optional<User> selectedUser = userRepository.findById(id);
+        Optional<User> selectedUser = baseRepository.findById(id);
         return selectedUser
             .map(user -> response(user))
             .orElseGet(() -> Header.ERROR("no data"));
@@ -44,7 +42,7 @@ public class UserApiLogicService implements CrudInterface<UserApiRequest, UserAp
     @Override
     public Header<UserApiResponse> update(Header<UserApiRequest> request) {
         UserApiRequest userApiRequest = request.getData();
-        Optional<User> selectedUser = userRepository.findById(userApiRequest.getId());
+        Optional<User> selectedUser = baseRepository.findById(userApiRequest.getId());
         return selectedUser
             .map(user -> {
                 user.setAccount(userApiRequest.getAccount())
@@ -56,17 +54,17 @@ public class UserApiLogicService implements CrudInterface<UserApiRequest, UserAp
                     .setUnregisteredAt(userApiRequest.getUnregisteredAt());
                 return user;
             })
-            .map(user -> userRepository.save(user))
+            .map(user -> baseRepository.save(user))
             .map(updatedUser -> response(updatedUser))
             .orElseGet(() -> Header.ERROR("no data"));
     }
 
     @Override
     public Header delete(Long id) {
-        Optional<User> selectedUser = userRepository.findById(id);
+        Optional<User> selectedUser = baseRepository.findById(id);
         return selectedUser
             .map(user -> {
-                userRepository.delete(user);
+                baseRepository.delete(user);
                 return Header.OK();
             })
             .orElseGet(() -> Header.ERROR("no data"));
