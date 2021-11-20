@@ -77,7 +77,7 @@ public class OrderGroupApiLogicService
             .orElseGet(() -> Header.ERROR("no data"));
     }
 
-    private Header<OrderGroupApiResponse> response(OrderGroup orderGroup) {
+    public Header<OrderGroupApiResponse> response(OrderGroup orderGroup) {
         OrderGroupApiResponse res = OrderGroupApiResponse.builder()
             .id(orderGroup.getId())
             .status(orderGroup.getStatus())

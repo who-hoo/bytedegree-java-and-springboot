@@ -1,6 +1,7 @@
 package springbootstudy.model.network.response;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import lombok.*;
 import springbootstudy.model.enumClass.UserStatus;
 
@@ -25,4 +26,6 @@ public class UserApiResponse {
     private LocalDateTime registeredAt;
 
     private LocalDateTime unregisteredAt;
+
+    private List<OrderGroupApiResponse> orderGroupApiResponseList;
 }

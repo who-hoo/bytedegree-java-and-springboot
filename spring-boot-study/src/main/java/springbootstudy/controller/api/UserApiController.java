@@ -12,6 +12,7 @@ import springbootstudy.model.entity.User;
 import springbootstudy.model.network.Header;
 import springbootstudy.model.network.request.UserApiRequest;
 import springbootstudy.model.network.response.UserApiResponse;
+import springbootstudy.model.network.response.UserOrderInfoApiResponse;
 import springbootstudy.service.UserApiLogicService;
 
 @Slf4j
@@ -22,6 +23,11 @@ public class UserApiController
 
     @Autowired
     private UserApiLogicService userApiLogicService;
+
+    @GetMapping("/{id}/orderInfo")
+    public Header<UserOrderInfoApiResponse> orderInfo(@PathVariable Long id) {
+        return userApiLogicService.orderInfo(id);
+    }
 
     @GetMapping("")
     public Header<List<UserApiResponse>> search(
