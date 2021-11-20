@@ -74,7 +74,7 @@ public class ItemApiLogicService
             .orElseGet(() -> Header.ERROR("no data"));
     }
 
-    private Header<ItemApiResponse> response(Item item) {
+    public Header<ItemApiResponse> response(Item item) {
         ItemApiResponse res = ItemApiResponse.builder()
             .id(item.getId())
             .status(item.getStatus())

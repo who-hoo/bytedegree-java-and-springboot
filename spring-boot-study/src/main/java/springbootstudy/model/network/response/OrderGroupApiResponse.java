@@ -2,6 +2,7 @@ package springbootstudy.model.network.response;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 import lombok.*;
 import springbootstudy.model.enumClass.OrderType;
 
@@ -32,4 +33,6 @@ public class OrderGroupApiResponse {
     private LocalDateTime arrivalDate;
 
     private Long userId;
+
+    private List<ItemApiResponse> itemApiResponseList;
 }
