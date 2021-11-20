@@ -2,6 +2,7 @@ package com.fastcampus.faststore.service;
 
 import com.fastcampus.faststore.entity.Book;
 import com.fastcampus.faststore.repository.BookRepository;
+import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,8 +18,13 @@ public class BookService {
                 .orElseThrow(() -> new RuntimeException("해당 제목의 책이 존재하지 않습니다."));
     }
 
-    // TODO: 동일한 책의 제목이 존재하면 RunTimeException을 발생시키고, 그렇지 않으면 책을 저장하도록 구현하세요. 제목으로 책을 조회해오는 쿼리는 이미 BookRepository에 등록되어있습니다.
     @Transactional
     public void registerBook(String title, String author, Long price) {
+        Optional<Book> newBook = bookRepository.findByTitle(title);
+        if (newBook.isPresent()) {
+            throw new RuntimeException("동일한 책이 이미 존재합니다.");
+        } else {
+            bookRepository.save(new Book(title, author, price));
+        }
     }
 }
