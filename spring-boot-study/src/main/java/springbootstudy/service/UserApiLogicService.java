@@ -1,20 +1,29 @@
 package springbootstudy.service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.stream.Collectors;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import springbootstudy.interfaces.CrudInterface;
 import springbootstudy.model.entity.User;
 import springbootstudy.model.enumClass.UserStatus;
 import springbootstudy.model.network.Header;
 import springbootstudy.model.network.request.UserApiRequest;
 import springbootstudy.model.network.response.UserApiResponse;
-import springbootstudy.repository.UserRepository;
 
 @Service
 public class UserApiLogicService
     extends BaseService<UserApiRequest, UserApiResponse, User> {
+
+    public Header<List<UserApiResponse>> search(Pageable pageable) {
+        Page<User> users = baseRepository.findAll(pageable);
+        List<UserApiResponse> userApiResponseList = users.stream()
+            .map(this::response)
+            .collect(Collectors.toList());
+        return Header.OK(userApiResponseList);
+    }
 
     @Override
     public Header<UserApiResponse> create(Header<UserApiRequest> request) {
@@ -28,14 +37,15 @@ public class UserApiLogicService
             .registeredAt(LocalDateTime.now())
             .build();
         User newUser = baseRepository.save(user);
-        return response(newUser);
+        return Header.OK(response(newUser));
     }
 
     @Override
     public Header<UserApiResponse> read(Long id) {
         Optional<User> selectedUser = baseRepository.findById(id);
         return selectedUser
-            .map(user -> response(user))
+            .map(this::response)
+            .map(Header::OK)
             .orElseGet(() -> Header.ERROR("no data"));
     }
 
@@ -55,7 +65,8 @@ public class UserApiLogicService
                 return user;
             })
             .map(user -> baseRepository.save(user))
-            .map(updatedUser -> response(updatedUser))
+            .map(this::response)
+            .map(Header::OK)
             .orElseGet(() -> Header.ERROR("no data"));
     }
 
@@ -70,8 +81,8 @@ public class UserApiLogicService
             .orElseGet(() -> Header.ERROR("no data"));
     }
 
-    private Header<UserApiResponse> response(User user) {
-        UserApiResponse userApiResponse = UserApiResponse.builder()
+    private UserApiResponse response(User user) {
+        return UserApiResponse.builder()
             .id(user.getId())
             .account(user.getAccount())
             .password(user.getPassword()) // TODO : 암호화
@@ -81,6 +92,5 @@ public class UserApiLogicService
             .registeredAt(user.getRegisteredAt())
             .unregisteredAt(user.getUnregisteredAt())
             .build();
-        return Header.OK(userApiResponse);
     }
 }
